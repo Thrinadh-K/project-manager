@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "install:all": "npm install",
-    "build": "npm run build -w frontend",
+    "build": "VITE_API_URL=/api npm run build -w frontend",
     "start": "node backend/server.js",
     "dev": "npm run dev -w backend"
   },
