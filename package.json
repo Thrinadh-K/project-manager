@@ -10,7 +10,7 @@
   "scripts": {
     "install:all": "npm install",
     "build": "npm run build -w frontend",
-    "start": "npm start -w backend",
+    "start": "node backend/server.js",
     "dev": "npm run dev -w backend"
   },
   "engines": {
