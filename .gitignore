@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.env
+.env.local
+npm-debug.log*
+dev.out.log
+dev.err.log
+backend/uploads/avatars/*
+backend/uploads/tasks/*
+!backend/uploads/avatars/.gitkeep
+!backend/uploads/tasks/.gitkeep
