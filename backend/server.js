@@ -26,6 +26,13 @@ console.log('Available variables:', Object.keys(process.env).filter(k => !k.star
 console.log('-------------------------');
 
 app.set('trust proxy', 1);
+
+// Debug: Log all incoming requests
+app.use((req, res, next) => {
+  console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
+  next();
+});
+
 app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));
 app.use(cors({ origin: process.env.CLIENT_URL?.split(',') || '*', credentials: true }));
 app.use(express.json({ limit: '10mb' }));
