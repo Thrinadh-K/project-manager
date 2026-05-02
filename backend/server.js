@@ -21,6 +21,10 @@ const __dirname = path.dirname(__filename);
 
 connectDB();
 
+console.log('--- Environment Check ---');
+console.log('Available variables:', Object.keys(process.env).filter(k => !k.startsWith('npm_')).join(', '));
+console.log('-------------------------');
+
 app.set('trust proxy', 1);
 app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));
 app.use(cors({ origin: process.env.CLIENT_URL?.split(',') || '*', credentials: true }));
